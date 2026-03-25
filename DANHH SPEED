@@ -1,5 +1,5 @@
 --[[
-    DANHH SPEEDJOINER - INSTANT LOG EDITION
+    izkNy SPEEDJOINER - INSTANT LOG EDITION
     Maximum speed with instant console log forwarding
 --]]
 local Players = game:GetService("Players")
@@ -93,13 +93,13 @@ local function optimizeLogs()
     end
     
     if rconsoleinfo then
-        rconsoleinfo("⚡ izkNy SPEED - INSTANT LOG EDITION")
+        rconsoleinfo("⚡ DANHH SPEED - INSTANT LOG EDITION")
         rconsoleinfo("✓ Console forwarding: INSTANT MODE")
     end
     
     -- Set console to highest priority if available
     if setconsoletitle then
-        setconsoletitle("izkNy SPEED - INSTANT LOGS")
+        setconsoletitle("DANHH SPEED - INSTANT LOGS")
     end
     
     instantLog("Executor optimization complete", "INFO")
@@ -313,8 +313,8 @@ end)
 -- ========================
 -- LOAD TRACKER (os.clock resets to ~0 each Roblox open, so if saved > current = new session)
 -- ========================
-local COUNT_FILE = "izkNy_count.txt"
-local CLOCK_FILE = "izkNy_clock.txt"
+local COUNT_FILE = "DANHH_count.txt"
+local CLOCK_FILE = "DANHH_clock.txt"
 
 local currentClock = os.clock()
 local savedClock = math.huge
@@ -342,12 +342,12 @@ instantLog(string.format("Load tracker: %d load(s) this session", loadCount), "I
 local function createCleanLoadingScreen()
     local playerGui = player:WaitForChild("PlayerGui")
     
-    if playerGui:FindFirstChild("izkNySpeed") then
-        playerGui.izkNySpeed:Destroy()
+    if playerGui:FindFirstChild("DANHHSpeed") then
+        playerGui.DANHHSpeed:Destroy()
     end
     
     local screenGui = Instance.new("ScreenGui")
-    screenGui.Name = "izkNySpeed"
+    screenGui.Name = "DANHHSpeed"
     screenGui.ResetOnSpawn = false
     screenGui.DisplayOrder = 999999
     screenGui.IgnoreGuiInset = true
@@ -367,12 +367,12 @@ local function createCleanLoadingScreen()
     container.BackgroundTransparency = 1
     container.Parent = screenGui
     
-    -- "izkNy" text — centered, starts invisible
+    -- "DANHH" text — centered, starts invisible
     local nameText = Instance.new("TextLabel")
     nameText.Size = UDim2.new(0, 600, 0, 120)
     nameText.Position = UDim2.new(0.5, -300, 0.5, -70)
     nameText.BackgroundTransparency = 1
-    nameText.Text = "izkNy"
+    nameText.Text = "DANHH"
     nameText.Font = Enum.Font.GothamBlack
     nameText.TextSize = 96
     nameText.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -447,7 +447,7 @@ local function createCleanHUD(screenGui)
     hudText.Size = UDim2.new(0, 280, 0, 30)
     hudText.Position = UDim2.new(0.5, -140, 0, 10)
     hudText.BackgroundTransparency = 1
-    hudText.Text = "izkNy SPEED  |  LOADS: " .. tostring(loadCount)
+    hudText.Text = "DANHH SPEED  |  LOADS: " .. tostring(loadCount)
     hudText.Font = Enum.Font.GothamBold
     hudText.TextSize = 18
     hudText.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -500,7 +500,7 @@ end)
 task.spawn(function()
     while task.wait(0.05) do  -- Check 20 times per second
         for _, gui in pairs(player.PlayerGui:GetChildren()) do
-            if gui:IsA("ScreenGui") and gui.Name ~= "izkNySpeed" then
+            if gui:IsA("ScreenGui") and gui.Name ~= "DANHHSpeed" then
                 local name = gui.Name:lower()
                 if name:match("loading") or name:match("intro") or name:match("welcome") then
                     pcall(function() gui:Destroy() end)
@@ -562,14 +562,14 @@ end)
 -- ========================
 -- MAIN EXECUTION
 -- ========================
-instantLog("Starting izkNy SPEED initialization...", "INFO")
+instantLog("Starting DANHH SPEED initialization...", "INFO")
 local screenGui = createCleanLoadingScreen()
 task.wait(3)
 createCleanHUD(screenGui)
-instantLog("izkNy SPEED fully loaded", "INFO")
+instantLog("DANHH SPEED fully loaded", "INFO")
 instantLog("Press [0] to toggle FPS Boost", "INFO")
 instantLog("Instant log forwarding: ACTIVE", "INFO")
-print("⚡ izkNy SPEED - INSTANT LOG EDITION")
+print("⚡ DANHH SPEED - INSTANT LOG EDITION")
 print("⚡ Console logs are forwarded INSTANTLY")
 print("⚡ Press [0] to toggle FPS Boost mode")
 
